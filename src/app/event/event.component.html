@@ -1,0 +1,18 @@
+<p>event works!</p>
+<div>
+    <ul>
+        <li><b>ID</b> {{event.id}}</li>
+        <li><b>名前</b> <input id="name" [(ngModel)]="event.name" placeholder="name"></li>
+        <li><b>日時</b> {{event.date | date:'yyyy/mm/dd HH:MM:SS'}}</li>
+        <li><b>詳細</b> <textarea id="detail" [(ngModel)]="event.detail" placeholder="detail"></textarea></li>
+    </ul>
+</div>
+
+<div>
+    <ul>
+        <li><b>ID</b> {{event.id}}</li>
+        <li><b>名前</b> {{event.name}}</li>
+        <li><b>日時</b> {{event.date | date:'yyyy/mm/dd HH:MM:SS'}}</li>
+        <li><b>詳細</b> {{event.detail}}</li>
+    </ul>
+</div>

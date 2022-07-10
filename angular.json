@@ -102,5 +102,7 @@
       }
     }
   },
-  "defaultProject": "k-portal"
+  "cli": {
+    "analytics": "ca7f2824-57c9-4d52-b040-ff39bd009d11"
+  }
 }

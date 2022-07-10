@@ -1,0 +1,13 @@
+<p>event-calendar works!</p>
+
+<div>
+    <div *ngFor="let event of events">
+        <h3>
+            {{event.name}}
+        </h3>
+        <ul>
+            <li><b>日時</b>： {{event.date | date:'yyyy/mm/dd HH:MM'}}</li>
+            <li><b>詳細</b>： {{event.detail}}</li>
+        </ul>
+    </div>
+</div>

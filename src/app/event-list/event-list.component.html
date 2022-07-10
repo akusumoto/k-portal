@@ -1,0 +1,35 @@
+<p>event-list works!</p>
+
+<div>
+    <div *ngFor="let event of events">
+        <h3 *ngIf="selectedEvent === event; else notSelect" style="color:red">
+            {{event.name}}
+            <button type="button" (click)="onSelect(event)">解除</button>
+        </h3>
+        <ng-template #notSelect>
+        <h3>
+            {{event.name}}
+            <button type="button" (click)="onSelect(event)">選択</button>
+        </h3>
+        </ng-template>
+        <ul>
+            <li><b>日時</b>： {{event.date | date:'yyyy/mm/dd HH:MM'}}</li>
+            <li><b>詳細</b>： {{event.detail}}</li>
+        </ul>
+    </div>
+</div>
+
+<div *ngIf="selectedEvent">
+    <h2>{{selectedEvent.name}}</h2>
+    <ul>
+        <li><b>日時</b>： {{selectedEvent.date | date:'yyyy/mm/dd HH:MM'}}</li>
+        <li><b>詳細</b>： {{selectedEvent.detail}}</li>
+        <li>出欠
+            <ul>
+                <li *ngFor="let answer of selectedEvent.answers">
+                    {{answer.user.name}} ... {{answer.answer}}
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
